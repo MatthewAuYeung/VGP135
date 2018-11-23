@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/helloWorldButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Debug Lod Hello World"
+            tools:layout_editor_absoluteX="4dp"
+            tools:layout_editor_absoluteY="5dp" />
+
+        <Button
+            android:id="@+id/showToastButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Toast"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="76dp" />
+
+        <Button
+            android:id="@+id/notificationTestButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Notification" />
+
+        <Button
+            android:id="@+id/delayNotificationTestButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show delay notification" />
+
+        <Button
+            android:id="@+id/showPermissionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnPermissionRequestButtonClicked"
+            android:text="show permission" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
