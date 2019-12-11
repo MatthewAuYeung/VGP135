@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Player : MonoBehaviour
 {
-
+    [Header("His Stuff")]
     public GameObject fx_Dead;
     public GameObject fx_ColorChange;
     GameObject GameManagerObj;
@@ -14,10 +15,6 @@ public class Player : MonoBehaviour
     public AudioClip DeadClip;
     public AudioClip ItemClip;
     AudioSource source;
-
-
-
-
 
     Rigidbody2D rb;
 
@@ -40,7 +37,7 @@ public class Player : MonoBehaviour
 
 
 
-        hueValue = Random.Range(0, 10) / 10.0f;
+        hueValue = UnityEngine.Random.Range(0, 10) / 10.0f;
         SetBackgroundColor();
     }
 

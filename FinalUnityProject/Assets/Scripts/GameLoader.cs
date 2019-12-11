@@ -92,7 +92,7 @@ public class GameLoader : MonoBehaviour
         ScreenManagerScript screenManager = GameObject.Instantiate(screenManagerPrefab).GetComponent<ScreenManagerScript>();
 
         gameSystems.Register(screenManager);
-
+        
         watch.Stop();
         UnityEngine.Debug.Log("Loading synchronously took "+ watch.ElapsedMilliseconds + "ms");
     }

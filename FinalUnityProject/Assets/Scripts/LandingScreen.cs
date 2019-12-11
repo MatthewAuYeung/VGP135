@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LandingScreen : MonoBehaviour
 {
+    public InputField username;
 
     [SerializeField]
     private Button startGameButton;
@@ -15,12 +16,22 @@ public class LandingScreen : MonoBehaviour
     private Button contactusButton;
     [SerializeField]
     private Button achivementButton;
+    [SerializeField]
+    private Button updateprofileButton;
+
+    private bool _login = false;
+    private void Awake()
+    {
+        username = GetComponent<InputField>();
+    }
+
     private void Start()
     {
         startGameButton.onClick.AddListener(StartButtonClickdCallback);
         settingButton.onClick.AddListener(SettingButtonClickedCallback);
         contactusButton.onClick.AddListener(ContactUsButtonClickedCallback);
         achivementButton.onClick.AddListener(AchivementButtonClickedCallback);
+        updateprofileButton.onClick.AddListener(UpdateProfileButtonClickedCallback);
     }
 
     private void SettingButtonClickedCallback()
@@ -38,16 +49,31 @@ public class LandingScreen : MonoBehaviour
         ScreenManagerScript.Instance().PushScreen("AchivementScreen");
     }
 
+    private void UpdateProfileButtonClickedCallback()
+    {
+        ScreenManagerScript.Instance().PushScreen("UpdateProfileScreen");
+    }
+
     private void OnDestroy()
     {
         startGameButton.onClick.RemoveListener(StartButtonClickdCallback);
     }
+
     private void StartButtonClickdCallback()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        if(_login)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        }
     }
+
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Login()
+    {
+        _login = true;
     }
 }
